@@ -4,6 +4,7 @@
 using DataFrames
 using GLM
 using FreqTables
+using CSV
 
 #----------------
 # Data frame operations
@@ -11,11 +12,11 @@ using FreqTables
 # 1. Exploring your data
 
 # import some data (Stata's famed "auto" dataset)
-auto = readtable("auto.csv"); #makefactors = true
+auto = CSV.read("auto.csv", DataFrame); #makefactors = true
 
 # Show the variable names in our data frame and how they are stored
 # Stata's describe command
-showcols(auto)
+
 
 # Count number of rows and columns in the data frame
 size(auto,1)
